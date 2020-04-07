@@ -1,0 +1,11 @@
+
+
+<MatrixCell>:
+    text: str(root.value)
+    canvas.before:
+        Color:
+            rgba: self.cellColor()
+        Rectangle:
+            pos: self.pos
+            size: self.size
+

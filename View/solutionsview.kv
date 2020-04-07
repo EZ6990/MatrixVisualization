@@ -1,0 +1,29 @@
+#:include View/solutionview.kv
+
+<SolutionsView>:
+    solution: solution
+    orientation: 'vertical'
+    size_hint: (1, 1)
+    size: root.width,root.height
+    spacing: 10
+
+    canvas.before:
+        Color:
+            rgba: (0/255,0/255,0/255, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    SolutionView:
+        id: solution
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: (1, 0.1)
+        Button:
+            text: "back"
+            on_press: root.previous_index()
+        Button:
+            text: "next"
+            on_press: root.next_index()

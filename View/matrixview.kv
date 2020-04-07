@@ -1,0 +1,11 @@
+#:include View/matrixcell.kv
+
+<MatrixView>:
+    spacing: 5
+
+    canvas.before:
+        Color:
+            rgba: (0/255,0/255,0/255, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
