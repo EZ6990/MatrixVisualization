@@ -1,6 +1,6 @@
 
 from kivy.lang import Builder
-from kivy.properties import ListProperty, ObjectProperty
+from kivy.properties import ListProperty, ObjectProperty, NumericProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 
@@ -15,11 +15,12 @@ class SolutionsView(BoxLayout):
 
     solutions = ListProperty([])
     solution = ObjectProperty(None)
+    presented_index = NumericProperty(0)
 
     def __init__(self, **kwargs):
-        self.presented_index = 0
         super(SolutionsView, self).__init__()
         self.bind(solutions=self.refresh_solutions)
+        self.presented_index = 0
         self.solutions = kwargs.get('solutions', [])
 
     def refresh_solutions(self, instance, value):

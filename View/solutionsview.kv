@@ -17,13 +17,19 @@
     SolutionView:
         id: solution
 
-
     BoxLayout:
         orientation: 'horizontal'
         size_hint: (1, 0.1)
+
         Button:
             text: "back"
             on_press: root.previous_index()
+
+        Label:
+            text: "- " + str(root.presented_index) + " -"
+            size_hint: (0.3, 1)
+
+
         Button:
             text: "next"
             on_press: root.next_index()

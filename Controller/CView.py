@@ -23,10 +23,10 @@ class CView(BoxLayout):
         if self.cmatrix is not None and self.cmatrix.size > 0:
             self.add_widget(MatrixView(matrix=self.cmatrix.cvalue))
             self.add_widget(Label(text='=', size_hint=(0.4,1)))
-            for i in range(self.cmatrix.size):
-                sign = ("%+d" %(self.cmatrix.pattern[i]))[0]
-                self.add_widget(Label(text=sign, size_hint=(0.2,1)))
-                self.add_widget(MatrixView(matrix=self.cmatrix.matrices[i]))
+            self.add_widget(MatrixView(matrix=self.cmatrix.matrices[0] * self.cmatrix.pattern[0]))
+            for i in range(1,self.cmatrix.size):
+                self.add_widget(Label(text="+", size_hint=(0.2,1)))
+                self.add_widget(MatrixView(matrix=(self.cmatrix.matrices[i] * self.cmatrix.pattern[i])))
 
 
 
