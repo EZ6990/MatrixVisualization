@@ -33,8 +33,8 @@ class SolutionsView(BoxLayout):
 
     def previous_index(self):
         self.presented_index -= 1
-        if -self.presented_index < len(self.solutions):
-            self.presented_index = 0
+        if self.presented_index < 0:
+            self.presented_index = len(self.solutions) - 1
         self.refresh_solution()
 
     def next_index(self):
