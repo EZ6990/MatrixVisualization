@@ -3,6 +3,7 @@
 <CView>:
     orientation: 'horizontal'
     size: root.width,root.height
+    on_touch_down: self.zoom(args[1])
 
     canvas.before:
         Color:
